@@ -1,4 +1,4 @@
-public class Publisher extends OrdinaryUser
+public class Publisher
 {
 
 }
