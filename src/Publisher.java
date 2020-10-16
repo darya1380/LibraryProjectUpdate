@@ -45,4 +45,8 @@ public class Publisher extends SpecialPerson
     {
         writersThatSentBooks.removeIf(b -> !b.hasBestSellerWriter());
     }
+    public void readSentBooks()
+    {
+        //todo
+    }
 }
