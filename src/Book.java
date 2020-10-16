@@ -2,14 +2,14 @@ import java.util.*;
 
 public class Book
 {
-    private String name;
-    private Genre genre;
-    private Set<Writer> writers;
+    private final String name;
+    private final Genre genre;
+    private final Set<Writer> writers;
     private Set<Publisher> publishers;
     private int personWhoBorrow;
     private int numberOfPublish;
     private boolean isPublished;
-    private String explanation;
+    private final String explanation;
     private Map<String, Integer> reviews;
 
     public Book(String name, String explanation, Genre genre, Writer writer)
@@ -63,5 +63,18 @@ public class Book
     private boolean isAvailable()
     {
         return numberOfPublish >= personWhoBorrow;
+    }
+
+    public String getName()
+    {
+        return this.name;
+    }
+
+    public boolean hasBestSellerWriter()
+    {
+        for (Writer w: writers)
+            if(w.isBestSeller())
+                return true;
+            return false;
     }
 }

@@ -3,11 +3,11 @@ import java.util.Scanner;
 import java.util.Set;
 
 public class Writer extends SpecialPerson {
-    private int score;
+    private final int score;
     private int salary;
-    private boolean isBestSeller;
-    private Set<Book> finishedBooks;
-    private Set<Book> publisherSentBooks;
+    private final boolean isBestSeller;
+    private final Set<Book> finishedBooks;
+    private final Set<Book> publisherSentBooks;
     public Writer(String name, String lastName, long id, String username, String password)
     {
         super(name, lastName, id, username, password);
@@ -49,6 +49,13 @@ public class Writer extends SpecialPerson {
     }
     public void sendToPublisher()
     {
+        System.out.println("we will send all of your books to publisher");
+        publisherSentBooks.addAll(finishedBooks);
+        Publisher.writersThatSentBooks.addAll(finishedBooks);
+    }
 
+    public boolean isBestSeller()
+    {
+        return this.isBestSeller;
     }
 }
