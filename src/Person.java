@@ -10,4 +10,5 @@ public abstract class Person
         this.id = id;
     }
 
+    public abstract void start();
 }

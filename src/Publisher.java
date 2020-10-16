@@ -49,4 +49,9 @@ public class Publisher extends SpecialPerson
     {
         //todo
     }
+
+    @Override
+    public void start() {
+
+    }
 }

@@ -73,4 +73,8 @@ public class Writer extends SpecialPerson {
         return this.isBestSeller;
     }
 
+    @Override
+    public void start() {
+
+    }
 }
