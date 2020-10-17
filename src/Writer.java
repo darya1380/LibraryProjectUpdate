@@ -73,4 +73,34 @@ public class Writer extends SpecialPerson {
         return this.isBestSeller;
     }
 
+    @Override
+    public void start() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("1) get score");
+        System.out.println("2) write book");
+        System.out.println("3) send book to publisher");
+        int input = scanner.nextInt();
+        switch (input)
+        {
+            case 1:
+                System.out.println("the score is " + getScore());
+            break;
+            case 2:
+                try {
+                    this.writeBooks();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            case 3: this.sendToPublisher();
+            break;
+            default:
+                System.out.println("no command found");
+        }
+
+    }
+
+    private int getScore()
+    {
+        return this.score;
+    }
 }
