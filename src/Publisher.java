@@ -52,6 +52,22 @@ public class Publisher extends SpecialPerson
 
     @Override
     public void start() {
-
+        System.out.println("1) judge books");
+        System.out.println("2) optimize book list");
+        System.out.println("3) read sent books");
+        System.out.println("4) only accept best seller writer");
+        Scanner scanner = new Scanner(System.in);
+        int input = scanner.nextInt();
+        switch (input)
+        {
+            case 1:judge();
+            break;
+            case 2: optimizeBookList();
+            break;
+            case 3: readSentBooks();
+            break;
+            case 4: onlyGetBestSellers();
+            break;
+        }
     }
 }

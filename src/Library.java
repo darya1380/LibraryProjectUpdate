@@ -1,16 +1,17 @@
+import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
 
 public class Library
 {
-    private static Set<Book> books;
-    static Set<Publisher> publishers;
-    static Set<User> users;
-    static Set<Writer> writers;
+    private static final Set<Book> books = new HashSet<>();
+    static Set<Publisher> publishers = new HashSet<>();
+    static Set<User> users = new HashSet<>();
+    static Set<Writer> writers = new HashSet<>();
     static Librarian librarian;
 
     public static void main(String[] args) {
-
+        askInput();
     }
     public static void switchCommand(String[] command)
     {
@@ -22,6 +23,10 @@ public class Library
                 person = new Writer(command[1], command[2], Long.parseLong(command[3]), command[4], command[5]);
                 if (writers.contains(person)) {
                     res = true;
+                }
+                else
+                {
+                    System.out.println("no user found with this name!");
                 }
                 break;
             case "user":
@@ -40,7 +45,7 @@ public class Library
                 askInput();
                 break;
         }
-        if(person != null)
+        if(person != null && res)
             person.start();
     }
 
