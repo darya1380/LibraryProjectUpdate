@@ -4,7 +4,7 @@ import java.util.Set;
 
 public class Library
 {
-    private static final Set<Book> books = new HashSet<>();
+    static Set<Book> books = new HashSet<>();
     static Set<Publisher> publishers = new HashSet<>();
     static Set<User> users = new HashSet<>();
     static Set<Writer> writers = new HashSet<>();
