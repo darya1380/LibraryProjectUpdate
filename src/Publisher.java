@@ -8,7 +8,7 @@ public class Publisher extends SpecialPerson
     public Publisher(String name, String lastName, long id, String username, String password) {
         super(name, lastName, id, username, password);
     }
-    public void judge()
+    private void judge()
     {
         Scanner scanner = new Scanner(System.in);
         System.out.println("which book do you want to judge");
@@ -31,7 +31,7 @@ public class Publisher extends SpecialPerson
             }
         }
     }
-    public static void optimizeBookList()
+    private static void optimizeBookList()
     {
         acceptedOrRejectedBooks.forEach((book, aBoolean) ->
         {
@@ -41,11 +41,11 @@ public class Publisher extends SpecialPerson
             }
         });
     }
-    public void onlyGetBestSellers()
+    private void onlyGetBestSellers()
     {
         writersThatSentBooks.removeIf(b -> !b.hasBestSellerWriter());
     }
-    public void readSentBooks()
+    private void readSentBooks()
     {
         //todo phase 2
     }

@@ -5,6 +5,7 @@ import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
 
+
 public class Writer extends SpecialPerson {
     private final int score;
     private int salary;
@@ -51,7 +52,7 @@ public class Writer extends SpecialPerson {
         String name = scanner.nextLine();
         System.out.println("good, now please select your book genre");
         String genreIn = scanner.next();
-        Genre genre = Genre.valueOf(genreIn);
+        Book.Genre genre = Book.Genre.valueOf(genreIn);
         /* we will be able to save the book into file */
         writeBookContextInFile(name, scanner);
 

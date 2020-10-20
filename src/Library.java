@@ -8,7 +8,8 @@ public class Library
     static Set<Publisher> publishers = new HashSet<>();
     static Set<User> users = new HashSet<>();
     static Set<Writer> writers = new HashSet<>();
-    static Librarian librarian;
+    static final Librarian librarian = new Librarian("darya", "taghva", 24598471,
+            "librarian", "1234");
 
     public static void main(String[] args) {
         askInput();
@@ -36,10 +37,45 @@ public class Library
                 }
 
                 break;
-            case "publisher":
+            case "publisher": {
                 person = new Publisher(command[1], command[2], Long.parseLong(command[3]), command[4], command[5]);
-                res = true;
+            }
+            res = true;
                 break;
+            case "Librarian":
+            {
+                Librarian l = new Librarian(command[1], command[2], Long.parseLong(command[3]), command[4], command[5]);
+                if(l.equals(librarian))
+                {
+                    System.out.println("please enter the data of the person you want to add");
+                    Scanner scanner = new Scanner(System.in);
+                    while (scanner.hasNextLine())
+                    {
+                        String[] commands = scanner.nextLine().split(" ");
+                        switch (commands[0])
+                        {
+                            case "writer":
+                            {
+                                writers.add(new Writer(commands[1], commands[2], Long.parseLong(commands[3]
+                                ), commands[4], commands[5]));
+                            }
+                            break;
+                            case "publisher":
+                            {
+                                publishers.add(new Publisher(commands[1], commands[2], Long.parseLong(commands[3]),
+                                        commands[4], commands[5]));
+
+                            }
+                            break;
+                            default: {
+                                System.out.println("enter a valid command");
+                                askInput();
+                            }
+                            break;
+                        }
+                    }
+                }
+            }
             default:
                 System.out.println("command not found");
                 askInput();
@@ -51,11 +87,12 @@ public class Library
 
     private static void askInput()
     {
-        Librarian librarian = new Librarian("darya", "taghva", 24598471,
-                "librarian", "1234");
+
         Scanner scanner = new Scanner(System.in);
-        String input = scanner.nextLine();
-        String[] command = input.split(" ");
-        switchCommand(command);
+        while (scanner.hasNextLine()) {
+            String input = scanner.nextLine();
+            String[] command = input.split(" ");
+            switchCommand(command);
+        }
     }
 }

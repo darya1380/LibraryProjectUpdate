@@ -11,17 +11,19 @@ public class User extends Person {
     }
     private class BorrowedBook
     {
-        Book book;
+        private final Book book;
+       private final Date returnDate;
 
         public Book getBook() {
             return book;
+
         }
+
 
         public Date getReturnDate() {
             return returnDate;
         }
 
-        Date returnDate;
 
         public BorrowedBook(Book book)
         {
@@ -74,7 +76,7 @@ public class User extends Person {
         //todo FILE LOADING MANAGEMENT
     }
 
-    public void borrowBook()
+    private void borrowBook()
     {
         Scanner scanner = new Scanner(System.in);
         System.out.println("please enter the name of the book that you want");
@@ -84,6 +86,7 @@ public class User extends Person {
             {
                 if(this.isEligible())
                 {
+                    b.addPersonToBorrow();
                     borrowedBooks.add(new BorrowedBook(b));
                     System.out.println("you have successfully borrowed this book");
                     System.out.println("remember to return it");
