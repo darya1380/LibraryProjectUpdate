@@ -7,4 +7,8 @@ public abstract class SpecialPerson extends Person
         this.username = username;
         this.password = password;
     }
+    public void test()
+    {
+        System.out.println(this.testId);
+    }
 }

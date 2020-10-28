@@ -11,6 +11,7 @@ public class Book
     private boolean isPublished;
     private final String explanation;
     private Map<String, Integer> reviews;
+    //todo make out
     public enum Genre
     {
         Poem, LoveStory, Play, Classic, History, Novel, Psychology, Sociology, TechnicalBook, Philosophy, ScienceFiction,
