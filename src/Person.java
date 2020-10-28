@@ -12,5 +12,7 @@ public abstract class Person
         this.testId = -1;//todo
     }
 
+
+
     public abstract void start();
 }
